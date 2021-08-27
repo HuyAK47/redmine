@@ -1,0 +1,107 @@
+Creating scope :system. Overwriting existing method Enumeration.system.
+Creating scope :sorted. Overwriting existing method Group.sorted.
+Creating scope :sorted. Overwriting existing method User.sorted.
+Creating scope :system. Overwriting existing method Enumeration.system.
+Creating scope :sorted. Overwriting existing method Group.sorted.
+Creating scope :sorted. Overwriting existing method User.sorted.
+Started GET "/" for 127.0.0.1 at 2021-08-27 22:24:00 +0700
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 32ms (Allocations: 613)
+  
+ActiveRecord::ConnectionNotEstablished (Access denied for user 'redmine'@'localhost' (using password: YES)):
+  
+app/models/setting.rb:278:in `check_cache'
+app/controllers/application_controller.rb:99:in `user_setup'
+Started GET "/" for 127.0.0.1 at 2021-08-27 22:24:04 +0700
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 24ms (Allocations: 340)
+  
+ActiveRecord::ConnectionNotEstablished (Access denied for user 'redmine'@'localhost' (using password: YES)):
+  
+app/models/setting.rb:278:in `check_cache'
+app/controllers/application_controller.rb:99:in `user_setup'
+Started GET "/" for 127.0.0.1 at 2021-08-27 22:24:05 +0700
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 29ms (Allocations: 332)
+  
+ActiveRecord::ConnectionNotEstablished (Access denied for user 'redmine'@'localhost' (using password: YES)):
+  
+app/models/setting.rb:278:in `check_cache'
+app/controllers/application_controller.rb:99:in `user_setup'
+Started GET "/" for 127.0.0.1 at 2021-08-27 22:24:05 +0700
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 18ms (Allocations: 332)
+  
+ActiveRecord::ConnectionNotEstablished (Access denied for user 'redmine'@'localhost' (using password: YES)):
+  
+app/models/setting.rb:278:in `check_cache'
+app/controllers/application_controller.rb:99:in `user_setup'
+Started GET "/" for 127.0.0.1 at 2021-08-27 22:24:05 +0700
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 19ms (Allocations: 332)
+  
+ActiveRecord::ConnectionNotEstablished (Access denied for user 'redmine'@'localhost' (using password: YES)):
+  
+app/models/setting.rb:278:in `check_cache'
+app/controllers/application_controller.rb:99:in `user_setup'
+Started GET "/" for 127.0.0.1 at 2021-08-27 22:24:05 +0700
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 19ms (Allocations: 332)
+  
+ActiveRecord::ConnectionNotEstablished (Access denied for user 'redmine'@'localhost' (using password: YES)):
+  
+app/models/setting.rb:278:in `check_cache'
+app/controllers/application_controller.rb:99:in `user_setup'
+Creating scope :system. Overwriting existing method Enumeration.system.
+Creating scope :sorted. Overwriting existing method Group.sorted.
+Creating scope :sorted. Overwriting existing method User.sorted.
+Started GET "/" for 127.0.0.1 at 2021-08-27 22:26:29 +0700
+Processing by WelcomeController#index as HTML
+  Current user: anonymous
+  Rendered welcome/index.html.erb within layouts/base (Duration: 17.1ms | Allocations: 7133)
+  Rendered layout layouts/base.html.erb (Duration: 63.4ms | Allocations: 16456)
+Completed 200 OK in 499ms (Views: 57.5ms | ActiveRecord: 140.9ms | Allocations: 106430)
+Started GET "/projects" for 127.0.0.1 at 2021-08-27 22:26:32 +0700
+Processing by ProjectsController#index as HTML
+  Current user: anonymous
+  Rendered projects/index.html.erb within layouts/base (Duration: 46.3ms | Allocations: 11904)
+  Rendered layout layouts/base.html.erb (Duration: 90.9ms | Allocations: 18936)
+Completed 200 OK in 191ms (Views: 77.5ms | ActiveRecord: 34.3ms | Allocations: 47186)
+Started GET "/login" for 127.0.0.1 at 2021-08-27 22:26:39 +0700
+Processing by AccountController#login as HTML
+  Current user: anonymous
+  Rendered account/login.html.erb within layouts/base (Duration: 7.9ms | Allocations: 1570)
+  Rendered layout layouts/base.html.erb (Duration: 32.3ms | Allocations: 5492)
+Completed 200 OK in 43ms (Views: 30.2ms | ActiveRecord: 5.4ms | Allocations: 7074)
+Started POST "/login" for 127.0.0.1 at 2021-08-27 22:26:42 +0700
+Processing by AccountController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PjZSvjcfWICTk7WpHokkl1SwAC7cHL3UlrwbVwAHvZJHB1cAE2Fw3vLMbzFCBM0PZm9yc54H8s2WF34TFYGHiQ==", "back_url"=>"/projects", "username"=>"admin", "password"=>"[FILTERED]", "login"=>"Đăng nhập"}
+  Current user: anonymous
+Successful authentication for 'admin' from 127.0.0.1 at 2021-08-27 15:26:42 UTC
+Redirected to http://127.0.0.1:3000/projects
+Completed 302 Found in 172ms (ActiveRecord: 134.3ms | Allocations: 8810)
+Started GET "/projects" for 127.0.0.1 at 2021-08-27 22:26:42 +0700
+Processing by ProjectsController#index as HTML
+  Current user: admin (id=1)
+  Rendered projects/index.html.erb within layouts/base (Duration: 32.9ms | Allocations: 8396)
+  Rendered layout layouts/base.html.erb (Duration: 78.3ms | Allocations: 14378)
+Completed 200 OK in 100ms (Views: 70.4ms | ActiveRecord: 14.0ms | Allocations: 18262)
+Started GET "/time_entries" for 127.0.0.1 at 2021-08-27 22:26:45 +0700
+Processing by TimelogController#index as HTML
+  Current user: admin (id=1)
+  Rendered timelog/index.html.erb within layouts/base (Duration: 23.3ms | Allocations: 8765)
+  Rendered layout layouts/base.html.erb (Duration: 50.2ms | Allocations: 15229)
+Completed 200 OK in 173ms (Views: 47.5ms | ActiveRecord: 59.3ms | Allocations: 44024)
+Started GET "/projects" for 127.0.0.1 at 2021-08-27 22:26:47 +0700
+Processing by ProjectsController#index as HTML
+  Current user: admin (id=1)
+  Rendered projects/index.html.erb within layouts/base (Duration: 20.2ms | Allocations: 7920)
+  Rendered layout layouts/base.html.erb (Duration: 46.8ms | Allocations: 13855)
+Completed 200 OK in 74ms (Views: 39.1ms | ActiveRecord: 23.4ms | Allocations: 17034)
+Started GET "/admin" for 127.0.0.1 at 2021-08-27 22:26:48 +0700
+Processing by AdminController#index as HTML
+  Current user: admin (id=1)
+  Rendered admin/index.html.erb within layouts/admin (Duration: 6.5ms | Allocations: 2251)
+  Rendered layouts/base.html.erb (Duration: 16.8ms | Allocations: 4177)
+  Rendered layout layouts/admin.html.erb (Duration: 24.4ms | Allocations: 6723)
+Completed 200 OK in 51ms (Views: 25.1ms | ActiveRecord: 17.0ms | Allocations: 8986)

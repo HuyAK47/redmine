@@ -1,0 +1,34 @@
+DEPRECATION WARNING: Initialization autoloaded the constants ActiveRecord::Acts, ActiveRecord::Acts::Tree, Redmine::I18n, Redmine::Helpers, Redmine::Helpers::URL, Redmine::SafeAttributes, Redmine::SubclassFactory, CustomField, Redmine::Utils, Redmine::Configuration, Redmine::Scm::Adapters::CommandFailed, IssueRelation, Redmine::WikiFormatting::Macros, Redmine::Pagination, Redmine::SudoMode, ApplicationHelper, Redmine::WikiFormatting::Textile, Redmine::WikiFormatting::Textile::Formatter, Redmine::WikiFormatting::Textile::Helper, Redmine::WikiFormatting::HtmlParser, Redmine::WikiFormatting::Textile::HtmlParser, Redmine::WikiFormatting::Markdown, Redmine::WikiFormatting::Markdown::HTML, Redmine::WikiFormatting::Markdown::Formatter, Redmine::WikiFormatting::Markdown::Helper, Redmine::WikiFormatting::Markdown::HtmlParser, Redmine::WikiFormatting::CommonMark, Redmine::WikiFormatting::CommonMark::MarkdownFilter, Redmine::WikiFormatting::CommonMark::SanitizationFilter, Redmine::WikiFormatting::CommonMark::SyntaxHighlightFilter, Redmine::WikiFormatting::CommonMark::FixupAutoLinksFilter, Redmine::WikiFormatting::CommonMark::ExternalLinksFilter, Redmine::WikiFormatting::CommonMark::Formatter, Redmine::WikiFormatting::CommonMark::PIPELINE_CONFIG, Redmine::WikiFormatting::CommonMark::MarkdownPipeline, Redmine::WikiFormatting::CommonMark::Helper, Redmine::WikiFormatting::CommonMark::HtmlParser, and Redmine::Views::ApiTemplateHandler.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActiveRecord::Acts, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <top (required)> at C:/Users/HUY/Desktop/redmine/config/environment.rb:16)
+Started GET "/" for 127.0.0.1 at 2021-08-27 22:16:20 +0700
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 212ms (Allocations: 12624)
+
+
+  
+ActiveRecord::ConnectionNotEstablished (Access denied for user 'root'@'localhost' (using password: NO)):
+  
+app/models/setting.rb:278:in `check_cache'
+app/controllers/application_controller.rb:99:in `user_setup'
